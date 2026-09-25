@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieIT API</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h2>🎬 MovieIT API</h2>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>MovieIT's Library</h1>
+            <p>
+                Search and manage your favorite movies!
+            </p>
+
+            <div class="search">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search movies..."
+                >
+                <button>Search</button>
+            </div>
+
+            <div class="filters">
+                <button onclick="filterGenre('Action')">Action</button>
+                <button onclick="filterGenre('Comedy')">Comedy</button>
+                <button onclick="filterGenre('Drama')">Drama</button>
+                <button onclick="filterGenre('Adventure')">Adventure</button>
+            </div>
+        </section>
+
+        <section class="library">
+            <div class="library-header">
+                <div>
+                    <h2>Your Movies</h2>
+                    <p id="movie-count">Loading...</p>
+                </div>
+            </div>
+            <div
+                id="movies-container"
+                class="movies"
+            ></div>
+        </section>
+    </main>
+
+        <section class="add-movie">
+            <h2>Add a Movie</h2>
+            <form id="movie-form">
+                <input
+                    type="hidden"
+                    id="movie-id"
+                >
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Movie title"
+                    required
+                >
+                <input
+                    type="number"
+                    id="year"
+                    placeholder="Year"
+                    required
+                >
+                <input
+                    type="text"
+                    id="genre"
+                    placeholder="Genre"
+                    required
+                >
+                <button
+                    type="submit"
+                    id="submit-button"
+                >
+                    Add Movie
+                </button>
+                <button
+                    type="button"
+                    id="cancel-button"
+                    onclick="cancelEdit()"
+                    style="display:none"
+                >
+                    Cancel
+                </button>
+            </form>
+        </section>
+    <footer>
+        MovieIT API | Using Python Flask and SQLite | Aguila 09/26/2026
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function filterGenre(genre) {
+            document.getElementById("search").value = genre;
+
+            document
+                .getElementById("search")
+                .dispatchEvent(new Event("input"));
+        }
+    </script>
+</body>
+</html>
