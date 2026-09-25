@@ -9,7 +9,8 @@ This project supports full CRUD operations:
 - DELETE
 
 Including a Website to look on :
-
+aguila-movieapi-production.up.railway.app
+use curl -i "https://aguila-movieapi-production.up.railway.app/movies"
 ---
 
 ## 🛠️ Technologies Used and Web Host
