@@ -27,15 +27,15 @@ Including a Website to look on :
 
 ## 📁 Whole Structure 📁
 
-aguila-movieapi/
-app.py
-requirements.txt 
-README.md 
-.gitignore [Hidden VENV]
-requirements.txt [Sample Data]
-templates/
-index.html
-static/
-style.css
-script.js
-database.db
+- aguila-movieapi/
+- app.py
+- requirements.txt 
+- README.md 
+- .gitignore [Hidden VENV]
+- requirements.txt [Sample Data]
+- templates/
+- index.html
+- static/
+- style.css
+- script.js
+- database.db
